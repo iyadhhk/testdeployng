@@ -1,0 +1,182 @@
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+  <div class="card card0 border-0">
+      <div class="row d-flex">
+          <div class="col-lg-6">
+              <div class="card1 pb-1">
+                  <div class="row px-1 justify-content-center mt-4 mb-5 border-line"> <img
+                          src="../../assets/images/a7c43f50f9ec111d3f75d047a524ba6c.png" class="image" style="height:600px"> </div>
+              </div>
+
+          </div>
+          <div class="col-lg-6">
+              <div class="card2 card border-0 px-4 py-5">
+
+                  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                      <div class="row">
+
+                          <div class="form-group col-4">
+                              <label>Nom Mosquee</label>
+                              <input type="text" formControlName="nomMosquee" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.nomMosquee.errors }" />
+                              <div *ngIf="submitted && f.nomMosquee.errors" class="invalid-feedback">
+                                  <div *ngIf="f.nomMosquee.errors.required">Veuillez entrer votre nom du Mosquee</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-4">
+                            <label >Email:</label>
+                            <input type="email" name="email" id="email"   required  class="form-control"  formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" >
+                            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                              <div *ngIf="f.email.errors.required">Email is required</div>
+                              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                          </div>
+                          </div>
+                          <div class="form-group col-4">
+                              <label>Adresse</label>
+                              <input type="adresse" formControlName="adresse" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+                              <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                                  <div *ngIf="f.adresse.errors.required">Veuillez entrer adresse</div>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-4">
+                              <label>imam Mosquee</label>
+                              <input type="text" formControlName="imamMosquee" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.imamMosquee.errors }" />
+                              <div *ngIf="submitted && f.imamMosquee.errors" class="invalid-feedback">
+                                  <div *ngIf="f.imamMosquee.errors.required">Veuillez entrer le nom  du imamMosquee</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-4">
+                              <label>Site Web</label>
+                              <input type="text" formControlName="siteWeb" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.siteWeb.errors }" />
+                              <div *ngIf="submitted && f.siteWeb.errors" class="invalid-feedback">
+                                  <div *ngIf="f.siteWeb.errors.required">Veuillez entrer le site Web</div>
+                              </div>
+
+                          </div>
+                          <div class="form-group col-4">
+                            <label>Association Mosquee</label>
+                            <input type="text" formControlName="associationMosquee" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.associationMosquee.errors }" />
+                            <div *ngIf="submitted && f.associationMosquee.errors" class="invalid-feedback">
+                                <div *ngIf="f.associationMosquee.errors.required">Veuillez entrer le nom de l'association Mosquee</div>
+
+                            </div>
+                        </div>
+
+                      <div class="row">
+                          <div class="form-group col-6">
+                              <label>lat</label>
+                              <input type="text" formControlName="lat" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.lat.errors }" />
+                              <div *ngIf="submitted && f.lat.errors" class="invalid-feedback">
+                                  <div *ngIf="f.lat.errors.required">Veuillez entrer lat</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-6">
+                              <label>lng</label>
+                              <input type="text" formControlName="lng" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.lng.errors }" />
+                              <div *ngIf="submitted && f.lng.errors" class="invalid-feedback">
+                                  <div *ngIf="f.lng.errors.required">Veuillez entrer lng</div>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-6">
+                              <label>L'heure de l'ouverture</label>
+                              <input type="time" formControlName="openingHours" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.openingHours.errors }" />
+                              <div *ngIf="submitted && f.openingHours.errors" class="invalid-feedback">
+                                  <div *ngIf="f.openingHours.errors.required">Veuillez entrer L'heure de l'ouverture</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-6">
+                              <label>Image Mosqué</label>
+                              <input type="file" formControlName="featuredImage" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.featuredImage.errors }"   (change)="onSelectimage($event)"  accept="image/png, image/jpeg"
+                                  />
+                              <div *ngIf="submitted && f.featuredImage.errors" class="invalid-feedback">
+                                  <div *ngIf="f.featuredImage.errors.required">Veuillez entrer votre Image Mosquée</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-6">
+                              <label>Municipality</label>
+                              <input type="text" formControlName="municipality" class="form-control" />
+
+                          </div>
+                          <div class="form-group col-6">
+                              <label>facebook</label>
+                              <input type="text" formControlName="facebook" class="form-control" />
+
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-6">
+                            <label>Nom Gestionnaire</label>
+                            <input type="text" formControlName="nomGestionnaire" class="form-control" />
+
+                        </div>
+                        <div class="form-group col-6">
+                            <label>Salle Priere Femmes</label>
+                            <input type="text" formControlName="sallePriereFemmes" class="form-control" />
+
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-4">
+                          <label>Mosquee Salle Priere</label>
+                          <input type="text" formControlName="mosqueeSallePriere" class="form-control" />
+
+                      </div>
+                      <div class="form-group col-4">
+                          <label>fermeture Exeptionnelle</label>
+                          <input type="time" formControlName="fermetureExeptionnelle" class="form-control" />
+
+                      </div>
+                      <div class="form-group col-4">
+                        <label>ouverture Mosquee</label>
+                        <input type="date" formControlName="ouvertureMosquee" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.ouvertureMosquee.errors }" />
+                        <div *ngIf="submitted && f.ouvertureMosquee.errors" class="invalid-feedback">
+                            <div *ngIf="f.ouvertureMosquee.errors.required">Veuillez entrer la date d'ouverture Mosquee</div>
+                        </div>
+                    </div>
+                  </div>
+                      <div class="row">
+
+                          <div class="form-group col-6" >
+                            <label>Telephone 1</label>
+                             <international-phone-number formControlName="telephone" class="form-control" placeholder="Enter phone number" [maxlength]="20" [defaultCountry]="'tn'" [required]="true" ></international-phone-number>
+                       <div *ngIf="f.submitted && !f.telephone.valid" class="help-block">veuillez entrez le numero de telephone</div>
+
+                       </div>
+                       <div class="form-group col-6" >
+                        <label>Telephone 2</label>
+                         <international-phone-number formControlName="telephone1" class="form-control" placeholder="Enter phone number" [maxlength]="20" [defaultCountry]="'tn'" [required]="true"  ></international-phone-number>
+                   <div *ngIf="f.submitted && !f.telephone1.valid" class="help-block">veuillez entrez le deuxieme  numero de telephone</div>
+
+                   </div>
+                       </div>
+
+
+                      </div>
+                      <div class="row mb-3 mt-3 px-3 "> <button type="submit" class="btn btn-success text-center">Ajouter</button> </div>
+                        <div class="success" *ngIf="showSuccessMessage" style="color:red">Mosquée enregistrée</div>
+                      <div class='alert' *ngIf='serverErrorMessages' style="color:red">
+                        {{serverErrorMessages}}
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

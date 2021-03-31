@@ -1,0 +1,141 @@
+
+<!--
+    <mat-toolbar>
+        <section>
+            <div class="example-button-row">
+              <button mat-button>HOME</button>
+              <button mat-button  color="primary" [matMenuTriggerFor]="menu">CORAN</button>
+                   <mat-menu #menu="matMenu">
+                       <button mat-menu-item>Coran multi-langues audio et lecture</button>
+                       <button mat-menu-item>Sahih al bukhari hadiths compet Arabe et Anglais</button>
+                       <button mat-menu-item>Coran live</button>
+                   </mat-menu>
+              <button mat-button color="primary" routerLink="/touvermosquee">TROUVER UNE MOSQUEE</button>
+              <button mat-button color="primary" routerLink="/tempspriere">SALAT HORAIRE PRIERE</button>
+              <button mat-button  color="primary" [matMenuTriggerFor]="menu1">RECITATEURS</button>
+                   <mat-menu #menu1="matMenu">
+                       <button mat-menu-item>Cheikh Maher Al-Maaiqli</button>
+                       <button mat-menu-item>Cheikh Mishary bin Rashid Alafasy</button>
+                       <button mat-menu-item>Cheikh Laayoun EL kouchi</button>
+                       <button mat-menu-item>Cheikh Abdul-Basit Abdel-Samad</button>
+                       <button mat-menu-item>Hani Ar-Rifai</button>
+                       <button mat-menu-item>Abdul Rahman Ibn Abdul Aziz Al-Sudais</button>
+                   </mat-menu>
+              <button mat-button color="primary" routerLink="/macquelive">MECQUE LIVE</button>
+              <button mat-button color="primary">BLOG</button>
+            </div>
+          </section>
+  </mat-toolbar>
+
+
+
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand"  routerLink="/home">JUSTCROK!!!!!!</a>
+
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a routerLink="/tempspriere" class="nav-link"><i class="nc-icon nc-book-bookmark"></i>Horaire Priére</a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="/touvermosquee"  class="nav-link"><i class="nc-icon nc-layout-11"></i>Trouver ma mosquee</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/macquelive"  class="nav-link"><i class="nc-icon nc-layout-11"></i>MECQUE LIVE</a>
+          </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                        <p class="d-lg-none">Twitter</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+                        <i class="fa fa-facebook-square"></i>
+                        <p class="d-lg-none">Facebook</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                        <p class="d-lg-none">Instagram</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://www.github.com/CreativeTimOfficial/paper-kit-2-angular" target="_blank">
+                        <i class="fa fa-github"></i>
+                        <p class="d-lg-none">GitHub</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
+  <div class="container-fluid">
+   <a class="navbar-brand" href="#">Justcrok</a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav ml-auto">
+       <li class="nav-item avtive">
+         <a class="nav-link" routerLink="/home">Home</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" routerLink="/tempspriere">Horaire Priére</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/quranecrit">Quran</a>
+         </li>
+       <li class="nav-item">
+         <a class="nav-link" routerLink="/touvermosquee">Trouver ma mosquee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/recitations">Récitateurs</a>
+         </li>
+        <li class="nav-item">
+         <a class="nav-link" routerLink="/macquelive">MECQUE LIVE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="#">Blog</a>
+         </li>
+     </ul>
+   </div>
+  </div>
+</nav>
+
+-->
+<header>
+
+  <nav class="navbar">
+    <a routerLink="/">
+      <img class="logo" src="../../assets/images/logo.svg" alt="logo" />
+    </a>
+    <div class="menu">
+      <div class="left-menu">
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/recitations">Récitateurs</a>
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/quranecrit">Quran</a>
+        <a (click)="oppmenu1()" class="menu-link" routerLink="/macquelive">Mecque Live</a>
+      </div>
+      <div class="right-menu">
+        <a class="store-btn">Play Store</a>
+
+        <select>
+          <option value="fr" default>Fr</option>
+          <option value="en">En</option>
+          <option value="ar">Ar</option>
+        </select>
+
+        <img *ngIf="!showMenu" (click)="oppmenu()" class="mobile-menu-btn" src="../../assets/images/menu.svg" alt="">
+        <img *ngIf="showMenu" (click)="oppmenu1()" class="mobile-menu-btn" src="../../assets/images/close.svg" alt="">
+      </div>
+    </div>
+  </nav>
+</header>

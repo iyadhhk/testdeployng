@@ -1,0 +1,115 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-4">
+            <div class="text-center card-box">
+                <div class="member-card">
+                    <div class="thumb-xl member-thumb m-b-10 center-block">
+                        <img src="https://res.cloudinary.com/dtl8igxn0/image/upload/v1616586531/1024px-OOjs_UI_icon_userAvatar-constructive.svg_lb3si7.png" class="img-circle img-thumbnail" alt="profile-image">
+                    </div>
+
+                    <div class="">
+                        <h4 class="m-b-5">{{userDetails.prenom}}</h4>
+                    </div>
+
+
+                    <div class="text-left m-t-40">
+                        <p class="text-muted font-13"><strong>NomAssociation :</strong> <span class="m-l-15">{{userDetails.nomAssociation}}</span></p>
+                        <p class="text-muted font-13"><strong>Telephone :</strong><span class="m-l-15">{{userDetails.telephone}}</span></p>
+                        <p class="text-muted font-13"><strong>Email :</strong> <span class="m-l-15">{{userDetails.email}}</span></p>
+                        <p class="text-muted font-13"><strong>Adresse :</strong> <span class="m-l-15">{{userDetails.adresse}}</span></p>
+                        <p class="text-muted font-13"><strong>Pays :</strong> <span class="m-l-15">{{userDetails.pays}}</span></p>
+                        <p class="text-muted font-13"><strong>ville :</strong> <span class="m-l-15">{{userDetails.ville}}</span></p>
+                        <p class="text-muted font-13"><strong>code postale:</strong> <span class="m-l-15">{{userDetails.codePostal}}</span></p>
+
+                        <p class="text-muted font-13"><strong>nom President Association:</strong> <span class="m-l-15">{{userDetails.nomPresidentAssociation}}</span></p>
+                        <p class="text-muted font-13"><strong>site Internet :</strong> <span class="m-l-15">{{userDetails.siteInternet}}</span></p>
+                        <p class="text-muted font-13"><strong>Role :</strong> <span class="m-l-15">{{userDetails.role}}</span></p>
+
+                      </div>
+                    <div >
+                    <ul class="social-links list-inline m-t-30" style="display:flex;flex-direction: row;margin-left:50px">
+                      <li>
+                          <a title="" data-placement="top" data-toggle="tooltip" style="background-color: #00b386;" class="tooltips" href="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>
+                      </li>
+                      <li>
+                          <a title="" data-placement="top" data-toggle="tooltip" style="background-color: #00b386;"  class="tooltips" href="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a>
+                      </li>
+                      <li>
+                          <a title="" data-placement="top" data-toggle="tooltip" style="background-color: #00b386;"  class="tooltips" href="" data-original-title="Skype"><i class="fa fa-skype"></i></a>
+                      </li>
+                      <li>
+                        <a title="" data-placement="top" data-toggle="tooltip" style="background-color: #00b386;" (click)="onLogout()" class="tooltips" href="" data-original-title="Skype"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+
+                      </li>
+                  </ul>
+                </div>
+              </div>
+          </div> <!-- end card-box -->
+
+
+      </div> <!-- end col -->
+
+
+      <div class="col-md-8 col-lg-9">
+          <div class="">
+              <div class="">
+
+                  <div class="tab-content">
+                      <div class="tab-pane" id="home">
+
+
+
+                      </div>
+                      <div class="tab-pane active" id="profile">
+                          <div class="row">
+                              <div class="col-sm-4" *ngFor="let mosquee of mosquees">
+                                  <div class="gal-detail thumb">
+                                      <a href="#" class="image-popup" title="Screenshot-2">
+                                          <img  src="{{mosquee.featuredImage}}" class="thumb-img" alt="work-thumbnail" style="width:50px">
+                                      </a>
+                                      <h4 class="text-center">{{mosquee.nomMosquee}}</h4>
+                                      <div class="ga-border"></div>
+                                      <p class="text-center">{{mosquee.adresse}}</p>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                      <div class="tab-pane" id="settings">
+                          <form role="form">
+                              <div class="form-group">
+                                  <label for="FullName">Full Name</label>
+                                  <input type="text" value="John Doe" id="FullName" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label for="Email">Email</label>
+                                  <input type="email" value="first.last@example.com" id="Email" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label for="Username">Username</label>
+                                  <input type="text" value="john" id="Username" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label for="Password">Password</label>
+                                  <input type="password" placeholder="6 - 15 Characters" id="Password" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label for="RePassword">Re-Password</label>
+                                  <input type="password" placeholder="6 - 15 Characters" id="RePassword" class="form-control">
+                              </div>
+                              <div class="form-group">
+                                  <label for="AboutMe">About Me</label>
+                                  <textarea style="height: 125px" id="AboutMe" class="form-control">Loren gypsum dolor sit mate, consecrate disciplining lit, tied diam nonunion nib modernism tincidunt it Loretta dolor manga Amalia erst volute. Ur wise denim ad minim venial, quid nostrum exercise ration perambulator suspicious cortisol nil it applique ex ea commodore consequent.</textarea>
+                              </div>
+                              <button class="btn btn-primary waves-effect waves-light w-md" type="submit">Save</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div> <!-- end col -->
+  </div>
+  <!-- end row -->
+</div>
+

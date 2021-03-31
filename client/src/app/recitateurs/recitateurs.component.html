@@ -1,0 +1,251 @@
+<!--
+<div class="container">
+  <div class="row">
+      <div class="col-3">
+        <h1>Liste récitateurs</h1>
+        <form [formGroup]="loginForm">
+
+          <select class="form-control" (change)="onChange()"  formControlName="selectedOption">
+            <option value="">----</option>
+              <option *ngFor="let data of dataJson" [value]="data.id">{{data.nom}}</option>
+
+          </select>
+          </form>
+      </div>
+  </div>
+
+</div>
+
+
+
+<div class="container text-center mt-3">
+
+<h1 class="text1 mt-5 mb-5">{{selectedData.nom}}</h1>
+
+<div>
+  <img [src]="selectedData.imageUrl" width="400" height="300" alt="">
+</div>
+
+
+</div>
+<div>
+<p class="description mt-5">
+      {{selectedData.description}}
+  <br>
+
+</p>
+<p class="description mt-5">
+  {{selectedData.paragrapheF}}
+<br>
+
+</p>
+<p class="description mt-5">
+{{selectedData.paragrapheA}}
+<br>
+
+</p>
+</div>
+<div class="container">
+
+
+<div class="row mt-5 mb-5">
+  <div class="col-lg-6 mt-2 embed-responsive embed-responsive-16by9"
+      style="display: flex; justify-content: center;" *ngFor="let url of selectedData.urls">
+      <iframe id="frame" width="650" height="409" [src]="url" frameborder="0"
+          allowfullscreen></iframe>
+  </div>
+
+</div>
+<div class="row mt-5 mb-5">
+  <div class="col-lg-4 mt-2 embed-responsive embed-responsive-16by9"
+      style="display: flex; justify-content: center;" *ngFor="let url of selectedData.urls2">
+      <iframe width="400" height="300" [src]="url" frameborder="0"
+          allowfullscreen></iframe>
+  </div>
+
+
+</div>
+</div>
+
+
+
+
+
+<div class="macque">
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <div class="container">
+      <div class="row">
+          <div class="col-3">
+            <h2  class="text1">Liste récitateurs</h2>
+                  <div *ngFor="let data of dataJson">
+                  <a mat-flat-button (click)="onChange(data.id)">{{data.nom}}</a>
+                  </div>
+          </div>
+      </div>
+
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container text-center mt-3">
+
+      <h1 class="text1 mt-5 mb-5">{{selectedData.nom}}</h1>
+
+      <div>
+        <img [src]="selectedData.imageUrl" width="400" height="300" alt="">
+      </div>
+
+
+      </div>
+      <div>
+      <p class="description mt-5">
+            {{selectedData.description}}
+        <br>
+
+      </p>
+      <p class="description mt-5">
+        {{selectedData.paragrapheF}}
+      <br>
+
+      </p>
+      <p class="description mt-5">
+      {{selectedData.paragrapheA}}
+      <br>
+
+      </p>
+      </div>
+      <div class="container">
+
+
+      <div class="row mt-5 mb-5">
+        <div class="col-lg-6 mt-2 embed-responsive embed-responsive-16by9"
+            style="display: flex; justify-content: center;" *ngFor="let url of selectedData.urls">
+            <iframe id="frame" width="650" height="409" [src]="url" frameborder="0"
+                allowfullscreen></iframe>
+        </div>
+
+      </div>
+      <div class="row mt-5 mb-5">
+        <div class="col-lg-4 mt-2 embed-responsive embed-responsive-16by9"
+            style="display: flex; justify-content: center;" *ngFor="let url of selectedData.urls2">
+            <iframe width="400" height="300" [src]="url" frameborder="0"
+                allowfullscreen></iframe>
+        </div>
+
+
+      </div>
+      </div>
+
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+</div>
+-->
+<div class="reciters">
+
+  <h1>Top Récitateur</h1>
+  <!-- section 1 : les recitateurs listes -->
+  <div class="reciter-list">
+      <div class="single-reciter">
+          <img class="image" src="../assets/images/Juhani.jpg">
+          <p>Abdullah Al-Juhani</p>
+          <div class="reciter-infos">
+              <p>Saudi Arabia</p>
+              <p>Riwayet Hafes</p>
+          </div>
+          <button (click)="affJuhani()">Ecoute</button>
+      </div>
+      <div class="single-reciter">
+          <img class="image" src="../assets/images/Ghamidy.jpg">
+          <p>Saad El Ghamidi</p>
+          <div class="reciter-infos">
+              <p>kuwait</p>
+              <p>Riwayet Hafes</p>
+          </div>
+          <button (click)="affGhamidy()">Ecoute</button>
+      </div>
+      <div class="single-reciter">
+          <img class="image" src="../assets/images/Abdelbasset.png">
+          <p>Abdelbasset Abdessamad</p>
+          <div class="reciter-infos">
+              <p>kuwait</p>
+              <p>Riwayet Hafes</p>
+          </div>
+          <button (click)="affSamad()">Ecoute</button>
+      </div>
+      <div class="single-reciter">
+          <img class="image" src="./../assets/images/Mueaqly.png">
+          <p>Mahir Al Muaiqlyy</p>
+          <div class="reciter-infos">
+              <p>kuwait</p>
+              <p>Riwayet Hafes</p>
+          </div>
+          <button (click)="affMaher()">Ecoute</button>
+      </div>
+
+  </div>
+
+  <!-- section 1 : les recitateurs audio -->
+  <div *ngIf="aff" class="reciter-content">
+
+      <div class="reciter-playlist">
+       <!--   <audio controls autoplay>
+              Al Fatiha <source src="{{chemin}}/001.mp3">
+          </audio>
+          <audio controls >
+            <source src="{{chemin}}/098.mp3">
+          </audio>
+          <audio controls >
+           <source src="{{chemin}}/099.mp3">
+          </audio>
+          <audio controls >
+           <source src="{{chemin}}/100.mp3">
+          </audio>
+          <audio controls >
+           <source src="{{chemin}}/101.mp3">
+          </audio>-->
+          <ngx-audio-player *ngIf="juhani"
+          [playlist]="juhaniPlaylist"
+          [displayTitle]="msaapDisplayTitle"
+          [autoPlay]="false"
+          muted="muted"
+          [displayPlaylist]="msaapDisplayPlayList"
+          [pageSizeOptions]="pageSizeOptions"
+          [displayVolumeControls]="msaapDisplayVolumeControls"
+          [displayRepeatControls]="msaapDisplayRepeatControls"
+          [disablePositionSlider]="msaapDisablePositionSlider"
+          [displayArtist]="msaapDisplayArtist"
+          [displayDuration]="msaapDisplayDuration"
+          [expanded]="true">
+        </ngx-audio-player>
+        <ngx-audio-player *ngIf="saad"
+        [playlist]="ghamidyPlaylist"
+        [displayTitle]="msaapDisplayTitle"
+        [autoPlay]="false"
+        muted="muted"
+        [displayPlaylist]="msaapDisplayPlayList"
+        [pageSizeOptions]="pageSizeOptions"
+        [displayVolumeControls]="msaapDisplayVolumeControls"
+        [displayRepeatControls]="msaapDisplayRepeatControls"
+        [disablePositionSlider]="msaapDisablePositionSlider"
+        [displayArtist]="msaapDisplayArtist"
+        [displayDuration]="msaapDisplayDuration"
+        [expanded]="true">
+      </ngx-audio-player>
+
+      </div>
+
+
+
+      <div class="reciter-description">
+          <h4 style="color: #01a67c;">À propos de Récitateur</h4>
+          <p>
+            {{recitateurInfo}}
+            {{recitateurInfoPlus}}
+          </p>
+      </div>
+  </div>
+
+
+</div>

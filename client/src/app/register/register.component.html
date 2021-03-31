@@ -1,0 +1,146 @@
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+  <div class="card card0 border-0">
+      <div class="row d-flex">
+          <div class="col-lg-6">
+              <div class="card1 pb-1">
+                  <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img
+                          src="../../assets/images/Samsung-Hand.png" class="image"> </div>
+              </div>
+
+          </div>
+          <div class="col-lg-6">
+              <div class="card2 card border-0 px-4 py-5">
+
+                  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                      <div class="row">
+
+                          <div class="form-group col-6">
+                              <label>Association</label>
+                              <input type="text" formControlName="nomAssociation" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.nomAssociation.errors }" />
+                              <div *ngIf="submitted && f.nomAssociation.errors" class="invalid-feedback">
+                                  <div *ngIf="f.nomAssociation.errors.required">Veuillez entrer votre nom d'association</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-6">
+                              <label>Nom President Association</label>
+                              <input type="text" formControlName="nomPresidentAssociation" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.nomPreceAssociation.errors }" />
+                              <div *ngIf="submitted && f.nomPreceAssociation.errors" class="invalid-feedback">
+                                  <div *ngIf="f.nomPreceAssociation.errors.required">Veuillez entrer votre nom précédent d'association</div>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-4">
+                              <label>Prénom</label>
+                              <input type="text" formControlName="prenom" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }" />
+                              <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                                  <div *ngIf="f.prenom.errors.required">Veuillez entrer votre prénom</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-4">
+                              <label>Email</label>
+                              <input type="text" formControlName="email" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                  <div *ngIf="f.email.errors.required">Veuillez entrer votre email</div>
+                                  <div *ngIf="f.email.errors.email">Veuillez entrer un email valide</div>
+                              </div>
+
+                          </div>
+                          <div class="form-group col-4">
+                            <label>Password</label>
+                            <input type="password" formControlName="password" class="form-control"
+                                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                <div *ngIf="f.password.errors.required">Veuillez entrer un mot de passe</div>
+                                <div *ngIf="f.password.errors.minlength">mot de passe doit être supérieur à 6 caractères
+                                </div>
+                            </div>
+                        </div>
+
+                      <div class="row">
+                          <div class="form-group col-6">
+                              <label>Pays</label>
+                              <input type="text" formControlName="pays" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.pays.errors }" />
+                              <div *ngIf="submitted && f.pays.errors" class="invalid-feedback">
+                                  <div *ngIf="f.pays.errors.required">Veuillez entrer votre pays</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-6">
+                              <label>Ville</label>
+                              <input type="text" formControlName="ville" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.ville.errors }" />
+                              <div *ngIf="submitted && f.ville.errors" class="invalid-feedback">
+                                  <div *ngIf="f.ville.errors.required">Veuillez entrer votre ville</div>
+                              </div>
+                          </div>
+
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-6">
+                              <label>Adresse</label>
+                              <input type="adresse" formControlName="adresse" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+                              <div *ngIf="submitted && f.adresse.errors" class="invalid-feedback">
+                                  <div *ngIf="f.adresse.errors.required">Veuillez entrer votre prénom</div>
+                              </div>
+                          </div>
+                          <div class="form-group col-6">
+                              <label>Code postal</label>
+                              <input type="text" formControlName="codePostal" class="form-control"
+                                  [ngClass]="{ 'is-invalid': submitted && f.codepostal.errors }" />
+                              <div *ngIf="submitted && f.codepostal.errors" class="invalid-feedback">
+                                  <div *ngIf="f.codepostal.errors.required">Veuillez entrer votre code postal</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="form-group col-6">
+                              <label>Site internet</label>
+                              <input type="text" formControlName="siteInternet" class="form-control" />
+
+                          </div>
+                          <div class="form-group col-6">
+                              <label>Réseau social</label>
+                              <input type="text" formControlName="pageReseauSocial" class="form-control" />
+
+                          </div>
+                      </div>
+                      <div class="row">
+
+                          <div class="form-group col-8" >
+                            <label>Telephone</label>
+                             <international-phone-number formControlName="telephone" class="form-control" placeholder="Enter phone number" [maxlength]="20" [defaultCountry]="'tn'" [required]="true"   ></international-phone-number>
+
+                              <div *ngIf="f.submitted && !f.telephone.valid" class="help-block">Phone number is required and should be valid</div>
+
+                       </div>
+                       <div class="form-group col-4">
+                        <label>Role</label>
+                        <input type="text" formControlName="role" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
+                        <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+                            <div *ngIf="f.role.errors.required">Veuillez entrer le Role</div>
+                        </div>
+                    </div>
+                       </div>
+
+
+                      </div>
+                      <div class="row mb-3 mt-3 px-3 "> <button type="submit" class="btn btn-success text-center">Inscription</button> </div>
+                        <div class="success" *ngIf="showSuccessMessage" style="color:red">Saved successfully</div>
+                      <div class='alert' *ngIf='serverErrorMessages' style="color:red">
+                        {{serverErrorMessages}}
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
