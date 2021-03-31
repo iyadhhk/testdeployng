@@ -9,9 +9,9 @@ const connectDB = require('./config/db');
 const app = express();
 connectDB();
 // set static folder
-app.use(express.static('dist/'));
+app.use(express.static('client/dist'));
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
+  res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
 });
 
 const fileStorage = multer.diskStorage({
